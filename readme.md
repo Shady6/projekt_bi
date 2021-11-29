@@ -8,13 +8,77 @@
    
 3. są skonstruowane, opisałem je ze wszystkimi atrybutami
 
-4. skorzystano z lasów losowych, miary klasyfikacji wypisują się w konsoli po odpaleniu
+4. skorzystano z lasów losowych, oraz Gaussian Naive Bayes. Miary klasyfikacji wypisują się w konsoli po odpaleniu
    (najlepiej odpalić se pare razy i wziąć model z najlepszymi miarami)
 
 5. python
 
 6. opis atrybutów na dole, prezkę jak możesz to zrób please, jbc 
    jak będziesz robić to Ci pomogę
+
+## Przykładowe wyniki (spróbuj odpalić parę razy i wziąć najlepsze)
+### Random Forest
+Classification reporty
+```
+               precision    recall  f1-score   support
+
+           0       0.93      1.00      0.96       956
+           1       0.20      0.01      0.02        78
+
+    accuracy                           0.92      1034
+   macro avg       0.56      0.50      0.49      1034
+weighted avg       0.87      0.92      0.89      1034
+```
+Confusion matrix   
+ [[952   4]   
+ [ 77   1]]
+
+Accuracy
+ 0.9216634429400387
+
+Specificity
+ 0.99581589958159
+
+Sensitivity
+ 0.01282051282051282
+
+Lift Curve   
+![](2021-11-29-17-49-55.png)
+
+ROC   
+![](2021-11-29-17-51-07.png)
+
+
+
+### Gaussian Naive Bayes
+Classification reporty
+```
+               precision    recall  f1-score   support
+
+           0       0.93      0.94      0.93       956
+           1       0.19      0.18      0.18        78
+    accuracy                           0.88      1034
+   macro avg       0.56      0.56      0.56      1034
+weighted avg       0.88      0.88      0.88      1034
+```
+Confusion matrix
+ [[895  61]
+ [ 64  14]]
+
+Accuracy
+ 0.879110251450677
+
+Specificity
+ 0.9361924686192469
+
+Sensitivity
+ 0.1794871794871795
+
+Lift Curve   
+![](2021-11-29-17-51-24.png)
+
+ROC   
+![](2021-11-29-17-51-40.png)
 
 
 ## Co to ten .arff

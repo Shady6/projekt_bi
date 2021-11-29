@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 import scikitplot
@@ -52,10 +53,11 @@ x = np.array(data.drop(columns=['class']))
 y = np.array(data['class'])
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4)
-model = RandomForestClassifier()
-model.fit(x_train, y_train)
+randomForestCls = RandomForestClassifier()
+randomForestCls.fit(x_train, y_train)
 
-y_pred = model.predict(x_test)
+y_pred = randomForestCls.predict(x_test)
+print('RANDOM FOREST CLASSIFIER ======================================================') 
 print('Classification reporty\n',
       sklearn.metrics.classification_report(y_test, y_pred))
 conf = sklearn.metrics.confusion_matrix(y_test, y_pred)
@@ -64,7 +66,26 @@ print('Accuracy\n', sklearn.metrics.accuracy_score(y_test, y_pred))
 tn, fp, fn, tp = conf.ravel()
 print('Specificity\n', tn / (tn+fp))
 print('Sensitivity\n', tp / (tp+fn))
-scikitplot.metrics.plot_lift_curve(y_test, model.predict_proba(x_test))
+scikitplot.metrics.plot_lift_curve(y_test, randomForestCls.predict_proba(x_test))
 plt.show()
-sklearn.metrics.plot_roc_curve(model, x_test, y_test)
+sklearn.metrics.plot_roc_curve(randomForestCls, x_test, y_test)
+plt.show()
+
+
+gaussianNBCls = GaussianNB()
+gaussianNBCls.fit(x_train, y_train)
+
+y_pred = gaussianNBCls.predict(x_test)
+print('GAUSSIAN NAIVE BAYES CLASSIFIER ======================================================') 
+print('Classification reporty\n',
+      sklearn.metrics.classification_report(y_test, y_pred))
+conf = sklearn.metrics.confusion_matrix(y_test, y_pred)
+print('Confusion matrix\n', conf)
+print('Accuracy\n', sklearn.metrics.accuracy_score(y_test, y_pred))
+tn, fp, fn, tp = conf.ravel()
+print('Specificity\n', tn / (tn+fp))
+print('Sensitivity\n', tp / (tp+fn))
+scikitplot.metrics.plot_lift_curve(y_test, gaussianNBCls.predict_proba(x_test))
+plt.show()
+sklearn.metrics.plot_roc_curve(gaussianNBCls, x_test, y_test)
 plt.show()
