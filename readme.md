@@ -48,6 +48,8 @@ Lift Curve
 ROC   
 ![](2021-11-29-17-51-07.png)
 
+Drzewo klasyfikacyjne (jedno ze 100 drzew wykorzystanych w lesie)
+![](example_tree.png)
 
 
 ### Gaussian Naive Bayes
@@ -66,7 +68,7 @@ Confusion matrix
  [ 64  14]]
 
 Accuracy
- 0.879110251450677
+ 0.879110251450677  
 
 Specificity
  0.9361924686192469

@@ -6,7 +6,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 import scikitplot
-
+from sklearn.tree import export_graphviz
+from subprocess import call
 
 hazard_dict = {
     'a': 0,
@@ -55,6 +56,13 @@ y = np.array(data['class'])
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4)
 randomForestCls = RandomForestClassifier()
 randomForestCls.fit(x_train, y_train)
+
+export_graphviz(randomForestCls.estimators_[1], out_file='tree.dot', 
+                feature_names = data.columns.drop(['class']),
+                class_names = 'class',
+                rounded = True, proportion = False, 
+                precision = 2, filled = True)
+call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png'])
 
 y_pred = randomForestCls.predict(x_test)
 print('RANDOM FOREST CLASSIFIER ======================================================') 
