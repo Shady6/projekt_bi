@@ -6,15 +6,14 @@
 2. ilość rekordów: 2584   
    ilość atrybutów: 18 + 5 dodatkowo skonstruowanych na podstawie istniejących atrybutów + klasa
    
-3. są skonstruowane, opisałem je ze wszystkimi atrybutami
+3. są skonstruowane, opisane razem ze wszystkimi atrybutami
 
 4. skorzystano z lasów losowych, oraz Gaussian Naive Bayes. Miary klasyfikacji wypisują się w konsoli po odpaleniu
-   (najlepiej odpalić se pare razy i wziąć model z najlepszymi miarami)
+   (najlepiej odpalić pare razy i wziąć model z najlepszymi miarami)
 
 5. python
 
-6. opis atrybutów na dole, prezkę jak możesz to zrób please, jbc 
-   jak będziesz robić to Ci pomogę
+6. opis atrybutów na dole
 
 ## Przykładowe wyniki
 ### Random Forest
@@ -84,7 +83,7 @@ ROC
 
 
 ## Co to ten .arff
-W pliku .arff masz opisane na czym polega ten dataset.
+W pliku .arff jest opisane na czym polega ten dataset.
 
 ## Instrukcja odaplenia
 1. potrzebny jest Python3 (używany był 3.8)
