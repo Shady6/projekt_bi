@@ -1,6 +1,6 @@
-# Projekt BI
+# Projekt BI (NOTATKI BRUDNOPIS)
 
-## Odnośnie tego co napisał w wordzie
+## Odnośnie tego co jest w wordzie
 1. Dataset https://archive-beta.ics.uci.edu/ml/datasets/seismic+bumps
 
 2. ilość rekordów: 2584   
@@ -16,9 +16,9 @@
 6. opis atrybutów na dole, prezkę jak możesz to zrób please, jbc 
    jak będziesz robić to Ci pomogę
 
-## Przykładowe wyniki (spróbuj odpalić parę razy i wziąć najlepsze)
+## Przykładowe wyniki
 ### Random Forest
-Classification reporty
+Classification report
 ```
                precision    recall  f1-score   support
 
@@ -43,13 +43,13 @@ Sensitivity
  0.01282051282051282
 
 Lift Curve   
-![](2021-11-29-17-49-55.png)
+![](./images/lift_forest.png)
 
 ROC   
-![](2021-11-29-17-51-07.png)
+![](./images/roc_forest.png)
 
 Drzewo klasyfikacyjne (jedno ze 100 drzew wykorzystanych w lesie)
-![](example_tree.png)
+![](./images/example_tree.png)
 
 
 ### Gaussian Naive Bayes
@@ -77,15 +77,14 @@ Sensitivity
  0.1794871794871795
 
 Lift Curve   
-![](2021-11-29-17-51-24.png)
+![](./images/lift_nb.png)
 
 ROC   
-![](2021-11-29-17-51-40.png)
+![](./images/roc_nb.png)
 
 
 ## Co to ten .arff
-W pliku .arff masz opisane na czym polega ten dataset. Ten .arff to zwykły txt tak na prawdę.
-Plz przeczytaj go, żebyś wiedział ocb.
+W pliku .arff masz opisane na czym polega ten dataset.
 
 ## Instrukcja odaplenia
 1. potrzebny jest Python3 (używany był 3.8)
